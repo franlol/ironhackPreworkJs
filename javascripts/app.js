@@ -68,6 +68,7 @@ function calculateDirection(direction, player) {
         if (player.y > 0) {
           player.y -= 1;
           grid(player, alien)
+          checkCollision();
         } else {
           movementError();
         }
@@ -75,6 +76,7 @@ function calculateDirection(direction, player) {
         if (player.x < 9) {
           player.x += 1;
           grid(player, alien)
+          checkCollision();
         } else {
           movementError();
         }
@@ -82,6 +84,7 @@ function calculateDirection(direction, player) {
         if (player.y < 9) {
           player.y += 1;
           grid(player, alien)
+          checkCollision();
         } else {
           movementError();
         }
@@ -89,6 +92,7 @@ function calculateDirection(direction, player) {
         if (player.x > 0) {
           player.x -= 1;
           grid(player, alien)
+          checkCollision();
         } else {
           movementError();
         }
@@ -100,6 +104,7 @@ function calculateDirection(direction, player) {
         if (player.y < 9) {
           player.y += 1;
           grid(player, alien)
+          checkCollision();
         } else {
           movementError();
         }
@@ -114,6 +119,7 @@ function calculateDirection(direction, player) {
         if (player.y > 0) {
           player.y -= 1;
           grid(player, alien)
+          checkCollision();
         } else {
           movementError();
         }
@@ -121,6 +127,7 @@ function calculateDirection(direction, player) {
         if (player.x < 9) {
           player.x += 1;
           grid(player, alien)
+          checkCollision();
         } else {
           movementError();
         }
@@ -181,6 +188,12 @@ function grid(player, alien) {
   }
   console.clear();
   console.log(map);
+}
+
+function checkCollision() {
+  if ((rover.x === alien.x) && (rover.y === alien.y)) {
+    console.log("CAREFULL! you are over something.... or someone");
+  }
 }
 
 grid(rover, alien);
